@@ -37,7 +37,7 @@ header{
 .logo i{
     height: 45px;
     width:45px;
-    background-color: red;
+    background-color: #d0595b;
     border-radius: 50%;
     color:#fff;
     font-weight: 700;
@@ -115,11 +115,11 @@ nav .navlinks li a{
     font-size: 14px;
 }
 .hero-text h5 span{
-    color:red;
+    color:#d0595b;
     font-size: 16px;
 }
 .hero-text h1{
-    color: red;
+    color: #d0595b;
     font-size: 3rem;
 }
 .hero-text p{
@@ -141,7 +141,7 @@ nav .navlinks li a{
     box-shadow:  0 10px 10px -8px rgb(0 0 0 / 78%);
 }
 .btn.active{
-    border-color: red;
+    border-color: #d0595b;
 }
 .hero-text .social i{
     color: #e5e5e5;
@@ -150,7 +150,7 @@ nav .navlinks li a{
     transition: 0.5s;
 }
 .hero-text .social i:hover{
-    color:red;
+    color:#d0595b;
     transform: rotate(360deg);
 }
 /* Respnosiv design & displaying navbar for small screen */
