@@ -596,34 +596,80 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
+  /* --- PERBAIKAN 1: HERO SECTION --- */
+
+  /* Judul agak dikecilkan biar ga terlalu penuh */
   .hero h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
   }
+
+  /* Ubah arah flex jadi kolom (atas-bawah) dan ratakan ke tengah */
   .hero-content {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: column; /* Teks di atas, foto di bawah */
+    text-align: center; /* PERBAIKAN 2: Teks jadi rata tengah */
+    gap: 60px; /* Jarak antara teks dan foto */
   }
+
+  /* Tombol juga harus ditengahkan */
   .hero-buttons {
     justify-content: center;
   }
+
+  /* --- PERBAIKAN FOTO KETUTUP --- */
   .hero-image {
-    width: 100%;
-    height: 400px;
-  }
-  .blob-shape {
-    width: 350px;
-    height: 350px;
-  }
-  .my-photo {
-    max-height: 400px;
+    width: 100%; /* Pastikan lebarnya penuh */
+    height: 450px; /* Beri tinggi yang cukup agar foto & blob masuk semua */
+    /* Pastikan posisinya relative agar anak-anaknya (foto, blob, card) bisa diatur */
+    position: relative;
+    /* Pastikan tidak ada yang tersembunyi */
+    overflow: visible;
   }
 
-  .about-container {
-    flex-direction: column;
-    text-align: center;
+  /* Sesuaikan ukuran blob & foto di mobile biar proporsional */
+  .blob-shape {
+    width: 320px;
+    height: 320px;
   }
+  .my-photo {
+    max-height: 380px;
+    bottom: 30px;
+  } /* Sedikit disesuaikan posisinya */
+
+  /* Sesuaikan posisi kartu melayang di mobile biar ga terlalu pinggir */
+  .fc-1 {
+    top: 10%;
+    left: 5%;
+  }
+  .fc-2 {
+    bottom: 15%;
+    right: 5%;
+  }
+
+  /* --- PERBAIKAN BAGIAN ABOUT --- */
+  .about-container {
+    flex-direction: column; /* Gambar di atas, teks di bawah */
+    text-align: center; /* Teks rata tengah */
+    gap: 40px;
+  }
+  /* List biodata juga harus rata tengah */
   .bio-list li {
     justify-content: center;
+  }
+
+  .hero .desc {
+    /* 1. Membuat teks rata kanan-kiri */
+    text-align: center;
+
+    /* 2. KUNCI RAHASIA: Membuat baris terakhir tetap di tengah (tidak lari ke kiri) */
+    -moz-text-align-last: center; /* Untuk Firefox */
+    text-align-last: center; /* Untuk Chrome/Safari/Edge */
+
+    /* 3. Memastikan blok teksnya sendiri ada di tengah container */
+    margin-left: auto;
+    margin-right: auto;
+
+    /* 4. Sedikit padding biar teks tidak terlalu mepet pinggir layar HP */
+    padding: 0 15px;
   }
 }
 
