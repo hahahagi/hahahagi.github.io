@@ -392,32 +392,47 @@ ul {
 /* ========================
    PROJECTS
 ======================== */
-/* 1. Ubah background container agar sesuai dengan warna aplikasi */
+/* 1. Container SmartPOS */
 .mobile-thumb {
-  background-color: #f5f7fb; /* Warna abu-abu terang background SmartPOS */
-  display: flex;
-  align-items: center; /* Pusatkan gambar secara vertikal */
-  justify-content: center; /* Pusatkan gambar secara horizontal */
+  background-color: #f5f7fb; /* Warna abu terang */
+
+  /* Kita pindahkan pengaturan layout ke .thumb-link agar link-nya yang mengatur posisi */
+  position: relative;
+  overflow: hidden;
 }
 
-/* 2. Ubah cara gambar ditampilkan */
-.mobile-screenshot {
-  /* Jangan di-cover, tapi di-contain agar terlihat utuh */
-  object-fit: contain !important;
+/* Pastikan Link pembungkusnya menjadi Flexbox agar gambar di tengah */
+.mobile-thumb .thumb-link {
+  display: flex !important;
+  align-items: center; /* Vertikal Center */
+  justify-content: center; /* Horizontal Center */
+  width: 100%;
+  height: 100%;
+}
 
-  /* Reset posisi agar di tengah */
+/* 2. Gambar SmartPOS (Sesuai request kamu) */
+.mobile-screenshot {
+  /* Agar tampil utuh (tidak terpotong) */
+  object-fit: contain !important;
   object-position: center !important;
 
-  /* Beri sedikit padding agar tidak terlalu mepet pinggir */
-  padding: 10px;
+  /* Ukuran gambar */
+  width: 100%;
+  height: 100%;
 
-  /* Opsional: Beri bayangan halus agar terlihat seperti HP beneran */
+  /* Jarak dari pinggir */
+  padding: 15px;
+
+  /* Bayangan halus */
   filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+
+  /* Transisi halus saat zoom */
+  transition: transform 0.4s ease;
 }
 
-/* Efek hover khusus untuk mobile (zoom lebih sedikit biar gak aneh) */
+/* 3. Efek Hover: Zoom sedikit (1.05) */
 .project-card:hover .mobile-screenshot {
-  transform: scale(1.05); /* Zoom sedikit saja */
+  transform: scale(1.05);
 }
 
 .project-img {
